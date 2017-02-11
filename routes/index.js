@@ -69,7 +69,7 @@ router.post(config.routes.move, function (req, res) {
   var dangerousPositions;
 
   //build my snake, and track enemy snakes
- /* for(var i = 0; i < snakes.length; i++)
+  for(var i = 0; i < snakes.length; i++)
   {
     if (snakes[i].id == you)
     {
@@ -82,14 +82,14 @@ router.post(config.routes.move, function (req, res) {
     else
     {
       enemySnakeHeads.push(snakes[i]coords[0]);
-      for(int j = 0; j < snakes[i].coords.length)
+      for(int j = 0; j < snakes[i].coords.length; j++)
       {
         dangerousPositions.push(snakes[i].coords[j]);
       }
     }
 
   }
-*/
+
 //  var headPosition =
 
 
