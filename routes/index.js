@@ -75,10 +75,12 @@ router.post(config.routes.move, function (req, res) {
  
 var i;
 var j = snakes.length;
-//document.write(j);
-/*
- for(i = 0; i < snakes.length; i++)
-  {
+
+ for(i = 0; i < 3; i++)
+ {
+  
+ }
+/*  {
     if (snakes[i].id == you)
     {
       health = snakes[i].health_points;
