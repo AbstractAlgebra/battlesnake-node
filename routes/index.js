@@ -69,7 +69,7 @@ router.post(config.routes.move, function (req, res) {
   var dangerousPositions;
 
   var fruits = ["Banana", "Orange", "Apple", "Mango"];
-  var k = fruits.length;
+  var k = snakes.length;
 
   //build my snake, and track enemy snakes
  
