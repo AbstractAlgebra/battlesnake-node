@@ -75,7 +75,7 @@ router.post(config.routes.move, function (req, res) {
  
 var i;
 var j = snakes.length;
-document.write(j);
+//document.write(j);
 /*
  for(i = 0; i < snakes.length; i++)
   {
