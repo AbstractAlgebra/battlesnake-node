@@ -67,20 +67,20 @@ router.post(config.routes.move, function (req, res) {
 
   var enemySnakeHeads;
   var dangerousPositions;
+  var headPosition;
 
-//  var fruits = ["Banana", "Orange", "Apple", "Mango"];
-  //var k = fruits.length;
 
-  //build my snake, and track enemy snakes
- 
+
+//build my snake, and track enemy snakes 
 var i;
-var j = snakes.length;
+var j;
 
  for(i = 0; i < snakes.length; i++)
  {
     if (snakes[i].id == you)
     {
       health = snakes[i].health_points;
+      headPosition = snakes[i].coords[0];
       for(j = 0; j < snakes[i].coords.length; j++)
       {
         position.push(snakes[i].coords[j]);
@@ -96,7 +96,7 @@ var j = snakes.length;
     }
   }
 
-//  var headPosition =
+
 
 
 
