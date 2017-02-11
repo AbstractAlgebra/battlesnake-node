@@ -74,7 +74,8 @@ router.post(config.routes.move, function (req, res) {
   //build my snake, and track enemy snakes
  
 var i;
-var j;
+var j = snakes.length;
+document.write(j);
 /*
  for(i = 0; i < snakes.length; i++)
   {
