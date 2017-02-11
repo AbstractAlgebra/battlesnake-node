@@ -76,9 +76,9 @@ router.post(config.routes.move, function (req, res) {
 var i;
 var j = snakes.length;
 
- for(i = 0; i < 3; i++)
+ for(i = 0; i < snakes.length; i++)
  {
-  
+
  }
 /*  {
     if (snakes[i].id == you)
