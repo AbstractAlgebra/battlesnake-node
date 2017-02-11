@@ -75,7 +75,7 @@ router.post(config.routes.move, function (req, res) {
  
 var i;
 var j;
-
+/*
  for(i = 0; i < snakes.length; i++)
   {
     if (snakes[i].id == you)
@@ -94,9 +94,7 @@ var j;
         dangerousPositions.push(snakes[i].coords[j]);
       }
     }
-
-//  }
-
+*/
 //  var headPosition =
 
 
