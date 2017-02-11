@@ -88,7 +88,7 @@ router.post(config.routes.move, function (req, res) {
       }
     }*/
 
-  }
+//  }
 
 //  var headPosition =
 
