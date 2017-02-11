@@ -74,7 +74,7 @@ router.post(config.routes.move, function (req, res) {
     if (snakes[i].id == you)
     {
       health = snakes[i].health_points;
-      for(var j = 0; j < snakes[i].coords.length)
+      for(var j = 0; j < snakes[i].coords.length; j++)
       {
         position.push(snakes[i].coords[j]);
       }
