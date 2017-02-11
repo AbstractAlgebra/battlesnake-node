@@ -86,14 +86,14 @@ var j = snakes.length;
         position.push(snakes[i].coords[j]);
       }
     }
-    /*else
+    else
     {
-      enemySnakeHeads.push(snakes[i]coords[0]);
+      enemySnakeHeads.push(snakes[i].coords[0]);
       for(j = 0; j < snakes[i].coords.length; j++)
       {
         dangerousPositions.push(snakes[i].coords[j]);
       }
-    }*/
+    }
   }
 
 //  var headPosition =
