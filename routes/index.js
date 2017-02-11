@@ -68,7 +68,12 @@ router.post(config.routes.move, function (req, res) {
   var enemySnakeHeads;
   var dangerousPositions;
 
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var k = fruits.length;
+
   //build my snake, and track enemy snakes
+ 
+
  /* for(var i = 0; i < snakes.length; i++)
   {
     if (snakes[i].id == you)
