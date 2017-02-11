@@ -70,7 +70,7 @@ router.post(config.routes.move, function (req, res) {
 
   //build my snake, and track enemy snakes
   for(var i = 0; i < snakes.length; i++)
-  {
+ /* {
     if (snakes[i].id == you)
     {
       health = snakes[i].health_points;
@@ -86,7 +86,7 @@ router.post(config.routes.move, function (req, res) {
       {
         dangerousPositions.push(snakes[i].coords[j]);
       }
-    }
+    }*/
 
   }
 
