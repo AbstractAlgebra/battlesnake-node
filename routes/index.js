@@ -68,18 +68,20 @@ router.post(config.routes.move, function (req, res) {
   var enemySnakeHeads;
   var dangerousPositions;
 
-  var fruits = ["Banana", "Orange", "Apple", "Mango"];
-  var k = snakes.length;
+//  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  //var k = fruits.length;
 
   //build my snake, and track enemy snakes
  
+var i;
+var j;
 
- /* for(var i = 0; i < snakes.length; i++)
+ for(i = 0; i < snakes.length; i++)
   {
     if (snakes[i].id == you)
     {
       health = snakes[i].health_points;
-      for(var j = 0; j < snakes[i].coords.length; j++)
+      for(j = 0; j < snakes[i].coords.length; j++)
       {
         position.push(snakes[i].coords[j]);
       }
@@ -87,11 +89,11 @@ router.post(config.routes.move, function (req, res) {
     else
     {
       enemySnakeHeads.push(snakes[i]coords[0]);
-      for(int j = 0; j < snakes[i].coords.length; j++)
+      for(j = 0; j < snakes[i].coords.length; j++)
       {
         dangerousPositions.push(snakes[i].coords[j]);
       }
-    }*/
+    }
 
 //  }
 
