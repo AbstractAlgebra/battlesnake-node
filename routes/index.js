@@ -96,10 +96,6 @@ var j;
     }
   }
 
-
-
-
-
   var data = {
     move: 'north', // one of: ["north", "east", "south", "west"]
     taunt: config.snake.taunt.move
