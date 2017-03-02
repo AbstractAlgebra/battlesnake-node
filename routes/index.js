@@ -69,7 +69,7 @@ return res.json(input);
  // }
   
 
-  var finalMove = 'left';
+//  var finalMove = 'left';
 /*
   if (foods[0][0] > headPosition[0])
   {
@@ -92,12 +92,12 @@ return res.json(input);
 */
 
   // Response data
-  var data = {
+  /*var data = {
     move: finalMove, // one of: ['up','down','left','right']
     taunt: 'Outta my way, snake!', // optional, but encouraged!
   }
 
-  return res.json(data)
+  return res.json(data)*/
 })
 
 module.exports = router
