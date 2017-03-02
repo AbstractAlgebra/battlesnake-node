@@ -117,26 +117,27 @@ var downCount = 0;
     var dangerX = dangerousPositions[i][0];
     var dangerY = dangerousPositions[i][1];
     //if one right is dangerous
-    if( ((headX + 1) ==  dangerX)  & headY == dangerY)
+    /*
+    if( ((headX + 1) ==  dangerX)  & (headY == dangerY))
     {
       rightCount = 0;
     }
  
 
-    if( ((headX - 1) ==  dangerX)  & headY == dangerY)
+    if( ((headX - 1) ==  dangerX)  & (headY == dangerY))
     {
       leftCount = 0;
     } 
 
-    if( headX  ==  dangerX  & ( headY + 1) == dangerY)
+    if( (headX  ==  dangerX)  & (( headY + 1) == dangerY))
     {
       downCount = 0;
     } 
 
-    if( headX ==  dangerX  & (headY - 1) == dangerY)
+    if( (headX ==  dangerX)  & ((headY - 1) == dangerY))
     {
       upCount = 0;
-    } 
+    } */
 
   }
 
