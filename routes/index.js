@@ -1,6 +1,6 @@
 var express = require('express')
 var router  = express.Router()
-var bodyParser = require('body-parser')
+//var bodyParser = require('body-parser')
 // Handle POST request to '/start'
 router.post('/start', function (req, res) {
   // NOTE: Do something here to start the game
