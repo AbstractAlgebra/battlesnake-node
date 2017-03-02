@@ -122,10 +122,10 @@ var downCount = 0;
   }
   else
   {
-    rightCount += randomIntInc(1,2);
-    leftCount += randomIntInc(1,2);
-    downCount += randomIntInc(1,2);
-    upCount += randomIntInc(1,2);
+    rightCount += randomIntInc(1,4);
+    leftCount += randomIntInc(1,4);
+    downCount += randomIntInc(1,4);
+    upCount += randomIntInc(1,4);
   }
 
 
