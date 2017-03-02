@@ -69,7 +69,14 @@ var k = snakes.length;
       }
     }*/
  // }
-  return res.json(input);
+  var finalMove = 'left';
+  var data = {
+    move: finalMove, // one of: ['up','down','left','right']
+    taunt: 'Outta my way, snake!', // optional, but encouraged!
+  }
+
+  return res.json(data)
+
 
 //  var finalMove = 'left';
 /*
@@ -94,12 +101,7 @@ var k = snakes.length;
 */
 
   // Response data
-  /*var data = {
-    move: finalMove, // one of: ['up','down','left','right']
-    taunt: 'Outta my way, snake!', // optional, but encouraged!
-  }
 
-  return res.json(data)*/
 })
 
 module.exports = router
