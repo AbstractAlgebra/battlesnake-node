@@ -103,7 +103,7 @@ var downCount = 0;
 
 
   //avoid deadly positions
-  
+  /*
   for(i = 0; i < dangerousPositions.length; i++)
   {
   
@@ -125,17 +125,17 @@ var downCount = 0;
       leftCount = 0;
     } 
 
-    if( (headX  ==  dangerX)  & (( headY - 1) == dangerY))
+    if( (headX  ==  dangerX)  & (( headY + 1) == dangerY))
     {
       downCount = 0;
     } 
 
-    if( (headX ==  dangerX)  & ((headY + 1) == dangerY))
+    if( (headX ==  dangerX)  & ((headY - 1) == dangerY))
     {
       upCount = 0;
     } 
 
-  }
+  }*/
 
   //handle avoiding walls
   if(headPosition[0] == 0)
