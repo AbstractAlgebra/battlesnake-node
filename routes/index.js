@@ -7,9 +7,9 @@ router.post('/start', function (req, res) {
 
   // Response data
   var data = {
-    color: "#008080",
-    name: "Bowser",
-    head_url: "http://bsnek.herokuapp.com/", // optional, but encouraged!
+    color: "#DFFF00",
+    name: "Trump Snake",
+    head_url: "http://www.placecage.com/c/200/200", // optional, but encouraged!
     taunt: "Let's do thisss thang!", // optional, but encouraged!
   }
 
@@ -20,54 +20,9 @@ router.post('/start', function (req, res) {
 router.post('/move', function (req, res) {
   // NOTE: Do something here to generate your move
 
-/*var input = req.body;
-
-
-  gameWidth = input.width;
-  gameHeight = input.height;
-  gameID = input.game_id;
-  snakes = input.snakes;
-  turn = input.turn;
-  foods = input.food;
-  you = input.you; 
-  var health;
-  var position;
-
-  var enemySnakeHeads;
-  var dangerousPositions;
-  var headPosition;
-
-
-
-//build my snake, and track enemy snakes 
-var i;
-var j;
-
- for(i = 0; i < snakes.length; i++)
- {
-    if (snakes[i].id == you)
-    {
-      health = snakes[i].health_points;
-      headPosition = snakes[i].coords[0];
-      for(j = 0; j < snakes[i].coords.length; j++)
-      {
-        position.push(snakes[i].coords[j]);
-      }
-    }
-    else
-    {
-      enemySnakeHeads.push(snakes[i].coords[0]);
-      for(j = 0; j < snakes[i].coords.length; j++)
-      {
-        dangerousPositions.push(snakes[i].coords[j]);
-      }
-    }
-  }
-*/
-
   // Response data
   var data = {
-    move: 'down', // one of: ['up','down','left','right']
+    move: 'up', // one of: ['up','down','left','right']
     taunt: 'Outta my way, snake!', // optional, but encouraged!
   }
 
