@@ -109,9 +109,9 @@ var downCount = 0;
 
   //avoid deadly positions
   
-  for(int i = 0; i < dangerousPositions.length; i++)
+  for(i = 0; i < dangerousPositions.length; i++)
   {
-  /*
+  
     var headX = headPosition[0];
     var headY = headPosition[1];
 
@@ -138,7 +138,7 @@ var downCount = 0;
     if( (headX ==  dangerX)  & ((headY - 1) == dangerY))
     {
       upCount = 0;
-    } */
+    } 
 
   }
 
