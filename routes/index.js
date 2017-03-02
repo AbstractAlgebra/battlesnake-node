@@ -139,7 +139,7 @@ var downCount = 0;
     } 
 
   }*/
-
+/*
   //handle avoiding walls
   if(headPosition[0] == 0)
   {
@@ -182,7 +182,7 @@ var downCount = 0;
   {
     finalMove = 'right';
   }
-
+*/
 
 
   var data = {
