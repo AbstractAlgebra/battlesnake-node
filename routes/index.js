@@ -49,10 +49,7 @@ var k = snakes.length;
 
 
 
- for(i = 0; i < 5; i++)
- {
-
- }
+ 
 // {
   /*  if (snakes[i].id == you)
     {
