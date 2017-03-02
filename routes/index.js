@@ -86,7 +86,7 @@ var downCount = 0;
 
 
 //only seek out food if hungry
-if( 2 < 4)
+if( health < 50)
 {
 
     if (foods[0][0] > headPosition[0])
