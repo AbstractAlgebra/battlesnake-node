@@ -111,11 +111,12 @@ var downCount = 0;
   
   for(int i = 0; i < dangerousPositions.length; i++)
   {
+  /*
     var headX = headPosition[0];
     var headY = headPosition[1];
 
     var dangerX = dangerousPositions[i][0];
-    var dangerY = dangerousPositions[i][1];
+    var dangerY = dangerousPositions[i][1];*/
     //if one right is dangerous
     /*
     if( ((headX + 1) ==  dangerX)  & (headY == dangerY))
