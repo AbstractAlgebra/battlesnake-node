@@ -26,7 +26,7 @@ router.post('//move', function (req, res) {
   var gameWidth = input.width;
   var gameHeight = input.height;
   var gameID = input.game_id;
-  var snakes = input.snakes;
+  var snakes = input[0].snakes;
   var turn = input.turn;
   var foods = input.food;
   var you = input.you; 
@@ -54,7 +54,7 @@ var k = snakes.length;
 
 for(int i = 0; i < snakes.length; i++)
 {
-  
+
 }
   /*  {
       health = snakes[i].health_points;
