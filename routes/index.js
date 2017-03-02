@@ -31,7 +31,7 @@ router.post('//move', function (req, res) {
   var foods = input.food;
   var you = input.you; 
   var health;
-  var position;
+  var position = new Array();
 
   var enemySnakeHeads;
   var dangerousPositions;
@@ -60,11 +60,9 @@ for(i = 0; i < snakes.length; i++)
     headPosition = snakes[i].coords[0];
     for(j = 0; j < snakes[i].coords.length; j++)
     {
-      
+      position.push(snakes[i].coords[j]);
     }
-    //{
-      //position.push(snakes[i].coords[j]);
-    //}
+
   }/*
   else
   {
