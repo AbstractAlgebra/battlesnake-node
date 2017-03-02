@@ -86,7 +86,7 @@ var downCount = 0;
 
 
 //only seek out food if hungry
-  if(health <= 50)
+  if(2 <= 50)
   {
 
 
