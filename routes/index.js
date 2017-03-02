@@ -16,6 +16,10 @@ router.post('/start', function (req, res) {
   return res.json(data)
 })
 
+function randomIntInc(low, high) {
+    return Math.floor(Math.random() * (high - low + 1) + low);
+}
+
 // Handle POST request to '/move'
 router.post('//move', function (req, res) {
   // NOTE: Do something here to generate your move
