@@ -163,22 +163,22 @@ var downCount = 0;
 
   //pick safest direction
 
-  if (downCount > leftCount && downCount > rightCount && downCount > upCount)
+  if (downCount >= leftCount && downCount >= rightCount && downCount >= upCount)
   {
     finalMove = 'down';
   }
 
-  if (upCount > leftCount && upCount > rightCount && upCount > downCount)
+  if (upCount >= leftCount && upCount >= rightCount && upCount >= downCount)
   {
     finalMove = 'up';
   }
 
-  if (leftCount > rightCount && leftCount > downCount && leftCount > upCount)
+  if (leftCount >= rightCount && leftCount >= downCount && leftCount >= upCount)
   {
     finalMove = 'left';
   }
 
-  if (rightCount > leftCount && rightCount > downCount && rightCount > upCount)
+  if (rightCount >= leftCount && rightCount >= downCount && rightCount >= upCount)
   {
     finalMove = 'right';
   }
