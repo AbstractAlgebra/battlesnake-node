@@ -139,14 +139,14 @@ var downCount = 0;
     } 
 
   }*/
-/*
+
   //handle avoiding walls
   if(headPosition[0] == 0)
   {
     leftCount = 0;
   }
 
-  if(headPosition[0] == width)
+  if(headPosition[0] == gameWidth)
   {
     rightCount = 0;
   }
@@ -156,7 +156,7 @@ var downCount = 0;
     upCount = 0;
   }
 
-  if(headPosition[1] == height)
+  if(headPosition[1] == gameHeight)
   {
     downCount = 0;
   }
@@ -182,7 +182,7 @@ var downCount = 0;
   {
     finalMove = 'right';
   }
-*/
+
 
 
   var data = {
