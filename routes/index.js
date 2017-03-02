@@ -70,9 +70,9 @@ var k = snakes.length;
     }*/
  // }
 
-if (snakes[i].id == you)
+if (snakes.length > 3)
 {
-  
+
 }
 
   var finalMove = 'left';
