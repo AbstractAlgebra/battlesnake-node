@@ -20,7 +20,7 @@ router.post('/start', function (req, res) {
 router.post('//move', function (req, res) {
   // NOTE: Do something here to generate your move
 
-  var input = JSON.parse(req.body);
+  var input = req.body;
 
 
   var gameWidth = input.width;
