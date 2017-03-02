@@ -89,11 +89,11 @@ for(i = 0; i < snakes.length; i++)
     finalMove = 'left';
   }
 
-  if (foods[0][1] < headPosition[1])
+  if (foods[0][1] > headPosition[1])
   {
     finalMove = 'down';
   }
-  if (foods[0][1] > headPosition[1])
+  if (foods[0][1] < headPosition[1])
   {
     finalMove = 'up';
   }
