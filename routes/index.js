@@ -39,12 +39,16 @@ router.post('//move', function (req, res) {
 
 
 
+
+
 //build my snake, and track enemy snakes 
 var i;
 var j;
 
- for(i = 0; i < snakes.length; i++)
- {
+return input;
+
+ //for(i = 0; i < snakes.length; i++)
+// {
   /*  if (snakes[i].id == you)
     {
       health = snakes[i].health_points;
@@ -62,7 +66,7 @@ var j;
         dangerousPositions.push(snakes[i].coords[j]);
       }
     }*/
-  }
+ // }
   
 
   var finalMove = 'left';
