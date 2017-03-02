@@ -69,6 +69,11 @@ var k = snakes.length;
       }
     }*/
  // }
+
+ for(i = 0; i < 5; i++)
+ {
+  
+ }
   var finalMove = 'left';
   var data = {
     move: finalMove, // one of: ['up','down','left','right']
