@@ -125,12 +125,12 @@ var downCount = 0;
       leftCount = 0;
     } 
 
-    if( (headX  ==  dangerX)  & (( headY + 1) == dangerY))
+    if( (headX  ==  dangerX)  & (( headY - 1) == dangerY))
     {
       downCount = 0;
     } 
 
-    if( (headX ==  dangerX)  & ((headY - 1) == dangerY))
+    if( (headX ==  dangerX)  & ((headY + 1) == dangerY))
     {
       upCount = 0;
     } 
