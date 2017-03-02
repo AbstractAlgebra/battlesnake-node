@@ -130,7 +130,7 @@ if( health < 50)
     leftCount += (Math.floor(Math.random() * (high - low + 1) + low));
     downCount += (Math.floor(Math.random() * (high - low + 1) + low));
     upCount += (Math.floor(Math.random() * (high - low + 1) + low));*/
-    leftCount += Math.floor(Math.random());
+    leftCount += 3;
   }
 
 
