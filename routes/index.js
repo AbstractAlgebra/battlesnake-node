@@ -82,37 +82,50 @@ var upCount = 0;
 var downCount = 0;
 
 
-  if (foods[0][0] > headPosition[0])
+//only seek out food if hungry
+  if(healh <= 50)
   {
-    rightCount += 2;
-  } else 
-  {
-    rightCount += 1;
-  }
 
-  if (foods[0][0] < headPosition[0])
-  {
-    leftCount += 2;
+
+    if (foods[0][0] > headPosition[0])
+    {
+      rightCount += 2;
+    } else 
+    {
+      rightCount += 1;
+    }
+
+    if (foods[0][0] < headPosition[0])
+    {
+      leftCount += 2;
+    }
+    else
+    {
+      leftCount += 1;
+    }
+
+    if (foods[0][1] > headPosition[1])
+    {
+      downCount += 2;
+    }
+    else 
+    {
+      downCount += 1;
+    }
+    if (foods[0][1] < headPosition[1])
+    {
+      upCount += 2;
+    } else
+    {
+      upCount += 1;
+    }
   }
   else
   {
-    leftCount += 1;
-  }
-
-  if (foods[0][1] > headPosition[1])
-  {
-    downCount += 2;
-  }
-  else 
-  {
-    downCount += 1;
-  }
-  if (foods[0][1] < headPosition[1])
-  {
-    upCount += 2;
-  } else
-  {
-    upCount += 1;
+    rightCount += randomIntInc(1,2);
+    leftCount += randomIntInc(1,2);
+    downCount += randomIntInc(1,2);
+    upCount += randomIntInc(1,2);
   }
 
 
