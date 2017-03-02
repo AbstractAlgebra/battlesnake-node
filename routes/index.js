@@ -65,7 +65,7 @@ var j;
   }*/
 
   var finalMove = 'left';
-
+/*
   if (foods[0][0] > headPosition[0])
   {
     finalMove = 'right';
@@ -84,7 +84,7 @@ var j;
   {
     finalMove = 'up';
   }
-
+*/
 
   // Response data
   var data = {
