@@ -26,7 +26,7 @@ router.post('//move', function (req, res) {
   var gameWidth = input.width;
   var gameHeight = input.height;
   var gameID = input.game_id;
-  var snakes = input[0].snakes;
+  var snakes = input.snakes;
   var turn = input.turn;
   var foods = input.food;
   var you = input.you; 
@@ -45,7 +45,7 @@ router.post('//move', function (req, res) {
 var i;
 var j;
 //var k = snakes.length;
-var k = 7;
+var k = snakes.length;
 
 
 
