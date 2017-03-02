@@ -76,22 +76,9 @@ for(i = 0; i < snakes.length; i++)
  // }
 
 
-if (snakes.length > 3)
-{
-
-}
 
   var finalMove = 'left';
-  var data = {
-    move: finalMove, // one of: ['up','down','left','right']
-    taunt: 'Outta my way, snake!', // optional, but encouraged!
-  }
 
-  return res.json(data)
-
-
-//  var finalMove = 'left';
-/*
   if (foods[0][0] > headPosition[0])
   {
     finalMove = 'right';
@@ -110,7 +97,13 @@ if (snakes.length > 3)
   {
     finalMove = 'up';
   }
-*/
+  var data = {
+    move: finalMove, // one of: ['up','down','left','right']
+    taunt: 'Outta my way, snake!', // optional, but encouraged!
+  }
+
+  return res.json(data)
+
 
   // Response data
 
