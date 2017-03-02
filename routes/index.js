@@ -51,10 +51,11 @@ var k = snakes.length;
 
  
 // {
-   if (snakes[i].id == you)
-   {
-    
-   }
+
+for(int i = 0; i < snakes.length; i++)
+{
+  
+}
   /*  {
       health = snakes[i].health_points;
       headPosition = snakes[i].coords[0];
