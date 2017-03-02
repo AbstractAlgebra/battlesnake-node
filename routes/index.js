@@ -2,7 +2,7 @@ var express = require('express')
 var router  = express.Router()
 var bodyParser = require('body-parser')
 
-function randomIntInc(low, high) {
+var x = function randomIntInc(low, high) {
     return Math.floor(Math.random() * (high - low + 1) + low);
 }
 // Handle POST request to '/start'
@@ -128,10 +128,12 @@ var downCount = 0;
   }
   else
   {
-    rightCount += randomIntInc(1,4);
-    leftCount += randomIntInc(1,4);
-    downCount += randomIntInc(1,4);
-    upCount += randomIntInc(1,4);
+    var low = 1;
+    var high = 4;
+    rightCount += Math.floor(Math.random() * (high - low + 1) + low);
+    leftCount += Math.floor(Math.random() * (high - low + 1) + low);
+    downCount += Math.floor(Math.random() * (high - low + 1) + low);
+    upCount += Math.floor(Math.random() * (high - low + 1) + low);
   }
 
 
