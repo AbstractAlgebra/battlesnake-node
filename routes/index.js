@@ -85,20 +85,34 @@ var downCount = 0;
   if (foods[0][0] > headPosition[0])
   {
     rightCount += 2;
+  } else 
+  {
+    rightCount += 1;
   }
 
   if (foods[0][0] < headPosition[0])
   {
     leftCount += 2;
   }
+  else
+  {
+    leftCount += 1;
+  }
 
   if (foods[0][1] > headPosition[1])
   {
     downCount += 2;
   }
+  else 
+  {
+    downCount += 1;
+  }
   if (foods[0][1] < headPosition[1])
   {
     upCount += 2;
+  } else
+  {
+    upCount += 1;
   }
 
 
@@ -116,23 +130,23 @@ var downCount = 0;
     
     if( ((headX + 1) ==  dangerX)  & (headY == dangerY))
     {
-      rightCount = 0;
+      rightCount = -1;
     }
  
 
     if( ((headX - 1) ==  dangerX)  & (headY == dangerY))
     {
-      leftCount = 0;
+      leftCount = -1;
     } 
 
     if( (headX  ==  dangerX)  & (( headY + 1) == dangerY))
     {
-      downCount = 0;
+      downCount = -1;
     } 
 
     if( (headX ==  dangerX)  & ((headY - 1) == dangerY))
     {
-      upCount = 0;
+      upCount = -1;
     } 
 
   }
