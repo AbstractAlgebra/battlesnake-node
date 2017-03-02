@@ -78,7 +78,7 @@ for(i = 0; i < snakes.length; i++)
 
 var leftCount = 0;
 var rightCount = 0;
-var upCount = 0;
+var upCount = 0;  
 var downCount = 0;
 
 
@@ -157,7 +157,7 @@ var downCount = 0;
     leftCount = -1;
   }
 
-  if(headPosition[0] == gameWidth)
+  if(headPosition[0] == gameWidth-1)
   {
     rightCount = -1;
   }
@@ -167,7 +167,7 @@ var downCount = 0;
     upCount = -1;
   }
 
-  if(headPosition[1] == gameHeight)
+  if(headPosition[1] == gameHeight-1)
   {
     downCount = -1;
   }
