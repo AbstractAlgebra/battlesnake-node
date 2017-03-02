@@ -126,10 +126,10 @@ if( health < 50)
   {
     var low = 1;
     var high = 4;/
-    rightCount += Math.floor(Math.random() * (high - low + 1) + low);
-    leftCount += Math.floor(Math.random() * (high - low + 1) + low);
-    downCount += Math.floor(Math.random() * (high - low + 1) + low);
-    upCount += Math.floor(Math.random() * (high - low + 1) + low);
+    rightCount += (Math.floor(Math.random() * (high - low + 1) + low));
+    leftCount += (Math.floor(Math.random() * (high - low + 1) + low));
+    downCount += (Math.floor(Math.random() * (high - low + 1) + low));
+    upCount += (Math.floor(Math.random() * (high - low + 1) + low));
   }
 
 
