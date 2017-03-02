@@ -46,7 +46,7 @@ var i;
 var j;
 var k = snakes.length;
 
-return res.json(snakes);
+return snakes.length;
 
  //for(i = 0; i < snakes.length; i++)
 // {
