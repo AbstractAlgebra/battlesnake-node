@@ -103,7 +103,7 @@ var downCount = 0;
 
 
   //avoid deadly positions
-  /*
+  
   for(i = 0; i < dangerousPositions.length; i++)
   {
   
@@ -135,7 +135,7 @@ var downCount = 0;
       upCount = 0;
     } 
 
-  }*/
+  }
 
   //handle avoiding walls
   if(headPosition[0] == 0)
