@@ -140,22 +140,22 @@ var downCount = 0;
   //handle avoiding walls
   if(headPosition[0] == 0)
   {
-    leftCount = 0;
+    leftCount = -1;
   }
 
   if(headPosition[0] == gameWidth)
   {
-    rightCount = 0;
+    rightCount = -1;
   }
 
   if(headPosition[1] == 0)
   {
-    upCount = 0;
+    upCount = -1;
   }
 
   if(headPosition[1] == gameHeight)
   {
-    downCount = 0;
+    downCount = -1;
   }
 
   //default to left
@@ -163,22 +163,22 @@ var downCount = 0;
 
   //pick safest direction
 
-  if (downCount >= leftCount && downCount >= rightCount && downCount >= upCount)
+  if (downCount >= leftCount && downCount >= rightCount && downCount >= upCount && downCount != -1)
   {
     finalMove = 'down';
   }
 
-  if (upCount >= leftCount && upCount >= rightCount && upCount >= downCount)
+  if (upCount >= leftCount && upCount >= rightCount && upCount >= downCount && upCount != -1)
   {
     finalMove = 'up';
   }
 
-  if (leftCount >= rightCount && leftCount >= downCount && leftCount >= upCount)
+  if (leftCount >= rightCount && leftCount >= downCount && leftCount >= upCount && leftCount != 1)
   {
     finalMove = 'left';
   }
 
-  if (rightCount >= leftCount && rightCount >= downCount && rightCount >= upCount)
+  if (rightCount >= leftCount && rightCount >= downCount && rightCount >= upCount && rightCount != 1)
   {
     finalMove = 'right';
   }
