@@ -53,7 +53,7 @@ var j;
       {
         position.push(snakes[i].coords[j]);
       }
-    }
+    }/*
     else
     {
       enemySnakeHeads.push(snakes[i].coords[0]);
@@ -61,7 +61,7 @@ var j;
       {
         dangerousPositions.push(snakes[i].coords[j]);
       }
-    }
+    }*/
   }
 
   var finalMove = 'left';
