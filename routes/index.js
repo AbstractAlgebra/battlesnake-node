@@ -46,9 +46,13 @@ var i;
 var j;
 var k = snakes.length;
 
-return snakes.length;
 
- //for(i = 0; i < snakes.length; i++)
+
+
+ for(i = 0; i < 5; i++)
+ {
+
+ }
 // {
   /*  if (snakes[i].id == you)
     {
@@ -68,7 +72,7 @@ return snakes.length;
       }
     }*/
  // }
-  
+  return res.json(input);
 
 //  var finalMove = 'left';
 /*
