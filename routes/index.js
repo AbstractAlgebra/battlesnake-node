@@ -86,7 +86,8 @@ var downCount = 0;
 
 
 //only seek out food if hungry
-
+if( 2 < 4)
+{
 
     if (foods[0][0] > headPosition[0])
     {
@@ -120,6 +121,7 @@ var downCount = 0;
     {
       upCount += 1;
     }
+  }
  /* else
   {
     var low = 1;
