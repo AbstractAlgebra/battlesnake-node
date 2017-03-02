@@ -55,7 +55,7 @@ var k = snakes.length;
 for(i = 0; i < snakes.length; i++)
 {
   if(snakes[i].id == you)
-  {
+  /*{
     health = snakes[i].health_points;
     headPosition = snakes[i].coords[0];
     for(j = 0; j < snakes[i].coords.length; j++)
@@ -70,7 +70,7 @@ for(i = 0; i < snakes.length; i++)
     {
       dangerousPositions.push(snakes[i].coords[j]);
     }
-  }
+  }*/
 }
  // }
 
