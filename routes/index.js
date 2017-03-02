@@ -44,7 +44,7 @@ router.post('//move', function (req, res) {
 //build my snake, and track enemy snakes 
 var i;
 var j;
-
+var k = snakes.length;
 return res.json(input);
 
  //for(i = 0; i < snakes.length; i++)
