@@ -20,7 +20,7 @@ router.post('/start', function (req, res) {
 router.post('//move', function (req, res) {
   // NOTE: Do something here to generate your move
 
-  var input = req.body;
+  var input = JSON.parse(req.body);
 
 
   var gameWidth = input.width;
@@ -51,8 +51,11 @@ var k = snakes.length;
 
  
 // {
-  /*  if (snakes[i].id == you)
-    {
+   if (snakes[i].id == you)
+   {
+    
+   }
+  /*  {
       health = snakes[i].health_points;
       headPosition = snakes[i].coords[0];
       for(j = 0; j < snakes[i].coords.length; j++)
