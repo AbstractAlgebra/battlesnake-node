@@ -56,16 +56,13 @@ for(i = 0; i < snakes.length; i++)
 {
   if(snakes[i].id == you)
   {
-    
-  }
-  /*{
     health = snakes[i].health_points;
     headPosition = snakes[i].coords[0];
     for(j = 0; j < snakes[i].coords.length; j++)
     {
       position.push(snakes[i].coords[j]);
     }
-  }
+  }/*
   else
   {
     enemySnakeHeads.push(snakes[i].coords[0]);
