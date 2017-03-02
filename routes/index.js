@@ -45,7 +45,8 @@ router.post('//move', function (req, res) {
 var i;
 var j;
 var k = snakes.length;
-return res.json(input);
+
+return res.json(snakes);
 
  //for(i = 0; i < snakes.length; i++)
 // {
