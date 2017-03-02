@@ -174,7 +174,7 @@ var downCount = 0;
   }
 
   if (leftCount >= rightCount && leftCount >= downCount && leftCount >= upCount && leftCount != 1)
-  {
+  { 
     finalMove = 'left';
   }
 
@@ -183,11 +183,31 @@ var downCount = 0;
     finalMove = 'right';
   }
 
+  //handle when only one direction is safe
+  if (rightCount == -1 && leftCount == -1 && upCount == -1)
+  {
+    finalMove = 'down';
+  }
+
+  if (rightCount == -1 && leftCount == -1 && downCount == -1)
+  {
+    finalMove = 'up';
+  }
+
+    if (downCount == -1 && leftCount == -1 && upCount == -1)
+  {
+    finalMove = 'right';
+  }
+
+    if (rightCount == -1 && downCount == -1 && upCount == -1)
+  {
+    finalMove = 'left';
+  }
 
 
   var data = {
     move: finalMove, // one of: ['up','down','left','right']
-    taunt: 'Outta my way, snake!', // optional, but encouraged!
+    taunt: 'Zoom zoom!', // optional, but encouraged!
   }
 
   return res.json(data)
