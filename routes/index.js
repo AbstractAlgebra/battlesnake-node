@@ -81,29 +81,24 @@ var rightCount = 0;
 var upCount = 0;
 var downCount = 0;
 
-  var finalMove = 'left';
 
   if (foods[0][0] > headPosition[0])
   {
     rightCount += 2;
-    finalMove = 'right';
   }
 
   if (foods[0][0] < headPosition[0])
   {
     leftCount += 2;
-    finalMove = 'left';
   }
 
   if (foods[0][1] > headPosition[1])
   {
     downCount += 2;
-    finalMove = 'down';
   }
   if (foods[0][1] < headPosition[1])
   {
     upCount += 2;
-    finalMove = 'up';
   }
 
 
@@ -162,6 +157,9 @@ var downCount = 0;
   {
     downCount = 0;
   }
+
+  //default to left
+  var finalMove = 'left';
 
   //pick safest direction
 
