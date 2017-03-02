@@ -86,8 +86,6 @@ var downCount = 0;
 
 
 //only seek out food if hungry
-  if(2 <= 50)
-  {
 
 
     if (foods[0][0] > headPosition[0])
@@ -122,16 +120,15 @@ var downCount = 0;
     {
       upCount += 1;
     }
-  }
-  else
+ /* else
   {
     var low = 1;
     var high = 4;/
-   /* rightCount += Math.floor(Math.random() * (high - low + 1) + low);
+    rightCount += Math.floor(Math.random() * (high - low + 1) + low);
     leftCount += Math.floor(Math.random() * (high - low + 1) + low);
     downCount += Math.floor(Math.random() * (high - low + 1) + low);
-    upCount += Math.floor(Math.random() * (high - low + 1) + low);*/
-  }
+    upCount += Math.floor(Math.random() * (high - low + 1) + low);
+  }*/
 
 
   //avoid deadly positions
