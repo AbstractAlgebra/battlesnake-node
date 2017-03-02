@@ -7,9 +7,9 @@ router.post('/start', function (req, res) {
 
   // Response data
   var data = {
-    color: "#DFFF00",
-    name: "Trump Snake",
-    head_url: "http://www.placecage.com/c/200/200", // optional, but encouraged!
+    color: "#008080",
+    name: "Bowser",
+    head_url: "http://bsnek.herokuapp.com/", // optional, but encouraged!
     taunt: "Let's do thisss thang!", // optional, but encouraged!
   }
 
@@ -22,7 +22,7 @@ router.post('/move', function (req, res) {
 
   // Response data
   var data = {
-    move: 'up', // one of: ['up','down','left','right']
+    move: 'down', // one of: ['up','down','left','right']
     taunt: 'Outta my way, snake!', // optional, but encouraged!
   }
 
