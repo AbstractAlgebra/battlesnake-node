@@ -94,7 +94,7 @@ function swap(data, i, j) {
 // Handle POST request to '/move'
 router.post('//move', function (req, res) {
 	// NOTE: Do something here to generate your move
-	
+	try{
 	var input = req.body;
 	var gameWidth = input.width;
 	var gameHeight = input.height;
@@ -221,8 +221,7 @@ router.post('//move', function (req, res) {
 	
 
 	var queue = new TinyQueue([], function(a, b) {
-		return 1;
-		//return weight[b[0]][b[1]] - weight[a[0]][a[1]];
+		return weight[b[0]][b[1]] - weight[a[0]][a[1]];
 	});
 	queue.push([hx, hy]);
 	weight[hx][hy] = 0;
@@ -459,6 +458,9 @@ router.post('//move', function (req, res) {
 	}
 
 	return res.json(data)
+}catch(e){
+	console.log(e);
+}
 
 
 	// Response data
