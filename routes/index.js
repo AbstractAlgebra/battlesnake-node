@@ -27,10 +27,6 @@ function TinyQueue(data, compare) {
     if (data) for (var i = Math.floor(this.length / 2); i >= 0; i--) this._down(i);
 }
 
-function defaultCompare(a, b) {
-    return a < b ? -1 : a > b ? 1 : 0;
-}
-
 TinyQueue.prototype = {
 
     push: function (item) {
@@ -215,15 +211,10 @@ router.post('//move', function (req, res) {
 	}
 	
 
-	var queue = new TinyQueue({
-		compare: function(a, b) {
-			return weight[b[0]][b[1]] - weight[a[0]][a[1]];
-		}
+	var queue = new TinyQueue([], function(a, b) {
+		return weight[b[0]][b[1]] - weight[a[0]][a[1]];
 	});
-	var whyyy = new Array(2);
-	whyyy[0] = hx;
-	whyyy[1] = hy;
-	queue.push(whyyy);
+	queue.push([hx, hy]);
 
 
 	//weight[hx][hy] = 0;
