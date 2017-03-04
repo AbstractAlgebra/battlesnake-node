@@ -191,6 +191,12 @@ router.post('//move', function (req, res) {
 		return res.json(data);
 	}
 
+	var backupPlan = {
+		move: left, // one of: ['up','down','left','right']
+		taunt: 'Zoom zoom!', // optional, but encouraged!
+	}
+
+	return res.json(backupPlan);
 
 })
 
