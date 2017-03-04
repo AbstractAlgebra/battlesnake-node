@@ -229,7 +229,7 @@ router.post('//move', function (req, res) {
 		const cw = weight[cx][cy];// current weight
 		visited[cx][cy] = true;
 		// @TODO remove when we don't want to just move to nearest food
-		if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
+		/*if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
 		{
 			targetX = cx;
 			targetY = cy;
@@ -257,7 +257,7 @@ router.post('//move', function (req, res) {
 					queue.push([px, py]);
 				}
 			}
-		}
+		}*/
 	}/*
 	//*
 	if (targetX == -1)
