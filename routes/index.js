@@ -217,10 +217,10 @@ router.post('//move', function (req, res) {
 	queue.push([hx, hy]);
 
 
-	//weight[hx][hy] = 0;
-	//var targetX = -1;
-	//var targetY = -1;
-	/*
+	weight[hx][hy] = 0;
+	var targetX = -1;
+	var targetY = -1;
+	
 	while (queue.length > 0)
 	{
 		const cur = queue.pop(); // current node to explore
@@ -285,7 +285,7 @@ router.post('//move', function (req, res) {
 		}
 
 		return res.json(data)
-	}*/
+	}
 
 	var leftCount = 0;
 	var rightCount = 0;
