@@ -220,7 +220,12 @@ router.post('//move', function (req, res) {
 			return weight[b[0]][b[1]] - weight[a[0]][a[1]];
 		}
 	});
-	queue.push([hx, hy]);
+	var whyyy = new Array(2);
+	whyyy[0] = hx;
+	whyyy[1] = hy;
+	queue.push(whyyy);
+
+
 	//weight[hx][hy] = 0;
 	//var targetX = -1;
 	//var targetY = -1;
