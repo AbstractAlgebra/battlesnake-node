@@ -8,12 +8,14 @@ router.post('//start', function (req, res) {
 
   // Response data
   var data = {
-    color: "#008080",
-    name: "Bowser",
-    head_url: "http://bsnek.herokuapp.com/", // optional, but encouraged!
-    taunt: "Let's do thisss thang!", // optional, but encouraged!
-  }
-
+    "color": "#48C9B0",
+    "secondary_color": "#00FF00",
+    "head_url": "http://i65.tinypic.com/1gqij7.jpg",
+    "name": "Metal Gear Snake",
+    "taunt": "Colonel, it's me! I'm fighting myself!",
+    "head_type": "fang",
+    "tail_type": "pixel"
+}
   return res.json(data)
 })
 
@@ -239,12 +241,12 @@ router.post('//move', function (req, res) {
 			targetX = cx;
 			targetY = cy;
 		}
-	/*	if (foodAt(cx, cy) && (health < 40 || 2 * hp < plen[cx][cy]))
+		if (foodAt(cx, cy) && (health < 40 || 2 * hp < plen[cx][cy]))
 		{
 			targetX = -1;
 			targetY = -1;
 			break;
-		}*/
+		}
 /*		for (var o = 0; o < 4; ++o)
 		{
 			// try all offsets (left, right, ec) and if not visited, move to
