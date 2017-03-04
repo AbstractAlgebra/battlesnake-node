@@ -70,7 +70,7 @@ router.post('//move', function (req, res) {
 		}
 	}
 	// }
-	/*
+	
 	
 	var hx = headPosition[0];
 	var hy = headPosition[1];
@@ -188,10 +188,13 @@ router.post('//move', function (req, res) {
 			taunt: 'Zoom zoom!', // optional, but encouraged!
 		}
 
-		return res.json(data)
+		return res.json(data);
 	}
 
-	*/
+
+})
+
+	/*
 		var data = {
 			move: 'left', // one of: ['up','down','left','right']
 			taunt: 'Zoom zoom!' // optional, but encouraged!
@@ -199,7 +202,6 @@ router.post('//move', function (req, res) {
 
 	return res.json(data);
 
-	/*
 
 	var leftCount = 0;
 	var rightCount = 0;
@@ -366,7 +368,7 @@ router.post('//move', function (req, res) {
 
 
 	// Response data*/
+	//})
 
-})
 
 module.exports = router
