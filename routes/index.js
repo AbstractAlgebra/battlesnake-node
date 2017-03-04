@@ -229,11 +229,11 @@ router.post('//move', function (req, res) {
 		const cw = weight[cx][cy];// current weight
 		visited[cx][cy] = true;
 		// @TODO remove when we don't want to just move to nearest food
-		if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
+		/*if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
 		{
 			targetX = cx;
 			targetY = cy;
-		}
+		}*/
 	/*	if (foodAt(cx, cy) && (health < 40 || 2 * hp < plen[cx][cy]))
 		{
 			targetX = -1;
