@@ -211,6 +211,11 @@ router.post('//move', function (req, res) {
 		if (yd < 0) yd = -yd;
 		return xd + yd;
 	}
+
+	var targetX = -1;
+	var targetY = -1;
+	/*
+
 	var queue = new TinyQueue({
 		compare: function(a, b) {
 			return weight[b[0]][b[1]] - weight[a[0]][a[1]];
@@ -258,7 +263,7 @@ router.post('//move', function (req, res) {
 			}
 		}
 	}
-	
+	*/
 	if (targetX == -1)
 	{
 		// this shouldn't happen???
