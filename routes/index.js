@@ -190,6 +190,8 @@ router.post('/move', function (req, res) {
 		return res.json(data)
 	}
 
+	/*
+
 	var leftCount = 0;
 	var rightCount = 0;
 	var upCount = 0;  
@@ -354,7 +356,7 @@ router.post('/move', function (req, res) {
 	return res.json(data)
 
 
-	// Response data
+	// Response data*/
 
 })
 
