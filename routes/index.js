@@ -46,11 +46,6 @@ router.post('//move', function (req, res) {
 	//var k = snakes.length;
 	var k = snakes.length;
 
-	var queue = new PriorityQueue({ comparator: function(a, b) { return b - a; }});
-	queue.queue(5);
-	queue.queue(3);
-	queue.queue(2);
-
 	// {
 
 	for(i = 0; i < snakes.length; i++)
@@ -75,6 +70,125 @@ router.post('//move', function (req, res) {
 		}
 	}
 	// }
+	
+	const hx = headPosition[0];
+	const hy = headPosition[1];
+	const NONE = -1;
+	const DOWN = 0;
+	const RIGHT = 1;
+	const LEFT = 2;
+	const UP = 3;
+	const offsets = [[0, 1], [1, 0], [-1, 0], [0, -1]];
+	const reverseMove = [3, 2, 1, 0];
+	
+	var queue = new PriorityQueue({
+		comparator: function(a, b) {
+			return weight[b[0],b[1]] - weight[a[0],a[1]];
+		}
+	});
+	var visited = new Array(gameWidth);
+	var weight = new Array(gameWidth);
+	var prev = new Array(gameWidth);
+	var plen = new Array(gameWidth);
+	var foodAtArr = new Array(gameWidth);
+	for (var i = 0; i < gameWidth; ++i)
+	{
+		visited[i] = new Array(gameHeight);
+		weight[i] = new Array(gameHeight);
+		prev[i] = new Array(gameHeight);
+		plen[i] = new Array(gameHeight);
+		foodAtArr[i] = new Array(gameHeight);
+		for (int j = 0; j < gameHeight; ++j)
+		{
+			visited[i][j] = false;
+			weight[i][j] = 9999999999; // arbitrary max weight
+			prev[i][j] = NONE;
+			plen[i][j] = 0;
+			foodAtArr[i][j] = false;
+		}
+	}
+	for (var i = 0; i < dangerousPositions.length; ++i)
+	{
+		visited[dangerousPositions[i][0], dangerousPositions[i][1]] = true;
+	}
+	for (var i = 0; i < foods.length; ++i)
+	{
+		foodAt[foods[i][0]][foods[i][1]] = true;
+	}
+	var foodAt = function(fx, fy)
+	{
+		return foodAtArr[fx][fy];
+	}
+	// @TODO: keep track of distance to closest food
+	//        maybe if hp < 40 || hp < dist * 2, go for it?
+	queue.queue([hx, hy]);
+	weight[hx][hy] = 0;
+	var targetX = -1;
+	var targetY = -1;
+	while (queue.length() > 0)
+	{
+		const cur = queue.dequeue(); // current node to explore
+		const cx = cur[0];
+		const cy = cur[1];
+		const cw = weight[cx][cy];// current weight
+		visited[cx][cy] = true;
+		// @TODO remove when we don't want to just move to nearest food
+		if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
+		{
+			targetX = cx;
+			targetY = cy;
+		}
+		if (foodAt(cx, cy))
+		{
+			targetX = -1;
+			targetY = -1;
+			break;
+		}
+		for (var o = 0; o < 4; ++o)
+		{
+			// try all offsets (left, right, ec) and if not visited, move to
+			const px = o[0] + cx;
+			const py = o[1] + cy;
+			if (!visited[px][py] && px >= 0 && py >= 0 && px < gameWidth && py < gameHeight)
+			{
+				const pw = cw + 1; // @TODO: add in a weight heuristic
+				if (pw < weight[px][py])
+				{
+					// update weight if we can get there cheaper
+					weight[px][py] = pw;
+					prev[px][py] = reverseMove[o];
+					queue.queue([px, py]);
+				}
+			}
+		}
+	}
+	
+	if (targetX == -1)
+	{
+		// this shouldn't happen???
+	}
+	else
+	{
+		var tx = targetX;
+		var ty = targetY;
+		var ptx = tx;
+		var pty = ty;
+		while (prev[tx][ty] != NONE)
+		{
+			ptx = tx;
+			pty = ty;
+			tx = offsets[prev[tx][ty]][0];
+			ty = offsets[prev[tx][ty]][1];
+		}
+		const move = reverseMove[prev[ptx][pty]];
+		const resp = ['down', 'right', 'left', 'up'];
+		var data = {
+			move: resp[move], // one of: ['up','down','left','right']
+			taunt: 'Zoom zoom!', // optional, but encouraged!
+		}
+
+		return res.json(data)
+	}
 
 	var leftCount = 0;
 	var rightCount = 0;
