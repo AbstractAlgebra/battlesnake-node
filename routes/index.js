@@ -42,8 +42,6 @@ router.post('//move', function (req, res) {
 
 
 	//build my snake, and track enemy snakes 
-	var i;
-	var j;
 	//var k = snakes.length;
 	var k = snakes.length;
 
@@ -103,7 +101,7 @@ router.post('//move', function (req, res) {
 		prev[i] = new Array(gameHeight);
 		plen[i] = new Array(gameHeight);
 		foodAtArr[i] = new Array(gameHeight);
-		for (j = 0; j < gameHeight; ++j)
+		for (var j = 0; j < gameHeight; ++j)
 		{
 			visited[i][j] = false;
 			weight[i][j] = 9999999999; // arbitrary max weight
