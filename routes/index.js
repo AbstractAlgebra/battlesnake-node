@@ -108,7 +108,7 @@ router.post('/move', function (req, res) {
 			foodAtArr[i][j] = false;
 		}
 	}
-	for (var i = 0; i < dangerousPositions.length; ++i)
+	/*for (var i = 0; i < dangerousPositions.length; ++i)
 	{
 		visited[dangerousPositions[i][0], dangerousPositions[i][1]] = true;
 	}
@@ -188,15 +188,15 @@ router.post('/move', function (req, res) {
 			taunt: 'Zoom zoom!', // optional, but encouraged!
 		}
 
-		return res.json(data);
-	}
+		return res.json(data)
+	}*/
 
-	var backupPlan = {
-		move: left, // one of: ['up','down','left','right']
-		taunt: 'Zoom zoom!', // optional, but encouraged!
-	}
+	 var backupPlan = {
+	 	move: left, // one of: ['up','down','left','right']
+	 	taunt: 'Zoom zoom!', // optional, but encouraged!
+	 }
 
-	return res.json(backupPlan);
+	 return res.json(backupPlan)
 
 })
 
