@@ -8,14 +8,11 @@ router.post('/start', function (req, res) {
 
   // Response data
   var data = {
-    "color": "#48C9B0",
-    "secondary_color": "#00FF00",
-    "head_url": "http://i65.tinypic.com/1gqij7.jpg",
-    "name": "Metal Gear Snake",
-    "taunt": "Colonel, it's me! I'm fighting myself!",
-    "head_type": "fang",
-    "tail_type": "pixel"
-}
+    color: "#008080",
+    name: "Bowser",
+    head_url: "http://bsnek.herokuapp.com/", // optional, but encouraged!
+    taunt: "Let's do thisss thang!", // optional, but encouraged!
+  }
 
   return res.json(data)
 })
@@ -104,9 +101,45 @@ router.post('//move', function (req, res) {
 	var turn = input.turn;
 	var foods = input.food;
 	var you = input.you; 
+	
+	const NONE = -1;
+	const DOWN = 0;
+	const RIGHT = 1;
+	const LEFT = 2;
+	const UP = 3;
+	const offsets = [[0, 1], [1, 0], [-1, 0], [0, -1]];
+	const reverseMove = [3, 2, 1, 0];
+	
+	var visited = new Array(gameWidth);
+	var weight = new Array(gameWidth);
+	var prev = new Array(gameWidth);
+	var plen = new Array(gameWidth);
+	var foodAtArr = new Array(gameWidth);
+	var snakeWeight = new Array(gameWidth);
+	var snakesAt = new Array(gameWidth);
+	for (var i = 0; i < gameWidth; ++i)
+	{
+		visited[i] = new Array(gameHeight);
+		weight[i] = new Array(gameHeight);
+		prev[i] = new Array(gameHeight);
+		plen[i] = new Array(gameHeight);
+		foodAtArr[i] = new Array(gameHeight);
+		snakeWeight[i] = new Array(gameHeight);
+		snakesAt[i] = new Array(gameHeight);
+		for (var j = 0; j < gameHeight; ++j)
+		{
+			visited[i][j] = false;
+			weight[i][j] = 9999999999; // arbitrary max weight
+			prev[i][j] = NONE;
+			plen[i][j] = 0;
+			foodAtArr[i][j] = false;
+			snakeWeight[i][j] = 0;
+			snakesAt[i][j] = 0;
+		}
+	}
+	
 	var health;
 	var position = new Array();
-
 	var enemySnakeHeads = new Array();
 	var dangerousPositions = new Array();
 	var headPosition;
@@ -121,6 +154,7 @@ router.post('//move', function (req, res) {
 			{
 				dangerousPositions.push(snakes[i].coords[j]);
 				position.push(snakes[i].coords[j]);
+				snakesAt[snakes[i].coords[j][0]][snakes[i].coords[j][1]] = snakes[i].coords.length - j;
 			}
 		}
 		else
@@ -129,10 +163,136 @@ router.post('//move', function (req, res) {
 			for(var j = 0; j < snakes[i].coords.length; j++)
 			{
 				dangerousPositions.push(snakes[i].coords[j]);
+				snakesAt[snakes[i].coords[j][0]][snakes[i].coords[j][1]] = snakes[i].coords.length - j;
 			}
 		}
 	}
 	
+	const hx = headPosition[0];
+	const hy = headPosition[1];
+	
+	for (var i = 0; i < dangerousPositions.length; ++i)
+	{
+		const dx = dangerousPositions[i][0];
+		const dy = dangerousPositions[i][1];
+		//visited[dx][dy] = true;
+		for (var j = -1; j < 2; ++j)
+		{
+			for (var k = -1; k < 2; ++k)
+			{
+				const dpx = dx + j;
+				const dpy = dy + k;
+				if (dpx >= 0 && dpx < gameWidth && dpy >= 0 && dpy < gameHeight)
+				{
+					snakeWeight[dpx][dpy] += 1;
+				}
+			}
+		}
+	}
+
+	for (var i = 0; i < foods.length; ++i)
+	{
+		foodAtArr[foods[i][0]][foods[i][1]] = true;
+	}
+	
+	function foodAt(fx, fy)
+	{
+		return foodAtArr[fx][fy];
+	}
+	function heurisic(heurx, heury)
+	{
+		var foodDist = 0;
+		for (var i = 0; i < foods.length; ++i)
+		{
+			foodDist += mdist(heurx, heury, foods[i][0], foods[i][1]);
+		}
+		return 1 + snakeWeight[heurx][heury] + foodDist * 0.1 / (0.1 + foods.length);
+	}
+	function mdist(ax, ay, bx, by)
+	{
+		var xd = ax - by;
+		var yd = ay - by;
+		if (xd < 0) xd = -xd;
+		if (yd < 0) yd = -yd;
+		return xd + yd;
+	}
+	
+
+	var queue = new TinyQueue([], function(a, b) {
+		return weight[b[0]][b[1]] - weight[a[0]][a[1]];
+	});
+	queue.push([hx, hy]);
+	weight[hx][hy] = 0;
+	var targetX = -1;
+	var targetY = -1;
+	
+	while (queue.length > 0)
+	{
+		const cur = queue.pop(); // current node to explore
+		const cx = cur[0];
+		const cy = cur[1];
+		const cw = weight[cx][cy];// current weight
+		visited[cx][cy] = true;
+		// @TODO remove when we don't want to just move to nearest food
+		if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
+		{
+			targetX = cx;
+			targetY = cy;
+		}
+	/*	if (foodAt(cx, cy) && (health < 40 || 2 * hp < plen[cx][cy]))
+		{
+			targetX = -1;
+			targetY = -1;
+			break;
+		}*/
+/*		for (var o = 0; o < 4; ++o)
+		{
+			// try all offsets (left, right, ec) and if not visited, move to
+			const px = offsets[o][0] + cx;
+			const py = offsets[o][1] + cy;
+			if (px >= 0 && py >= 0 && px < gameWidth && py < gameHeight
+			    && !visited[px][py] && snakesAt[px][py] <= plen[cx][cy])
+			{
+				const pw = cw + heurisic(px, py);
+				if (pw < weight[px][py])
+				{
+					// update weight if we can get there cheaper
+					weight[px][py] = pw;
+					prev[px][py] = reverseMove[o];
+					plen[px][py] = plen[cx][cy] + 1;
+					queue.push([px, py]);
+				}
+			}
+		}*/
+	}
+	//*
+	/*
+	if (targetX == -1)
+	{
+		// this shouldn't happen???
+	}
+	else
+	{
+		var tx = targetX;
+		var ty = targetY;
+		var ptx = tx;
+		var pty = ty;
+		while (prev[tx][ty] != NONE)
+		{
+			ptx = tx;
+			pty = ty;
+			tx = offsets[prev[tx][ty]][0];
+			ty = offsets[prev[tx][ty]][1];
+		}
+		const move = reverseMove[prev[ptx][pty]];
+		const resp = ['down', 'right', 'left', 'up'];
+		var data = {
+			move: resp[move], // one of: ['up','down','left','right']
+			taunt: 'Zoom zoom!', // optional, but encouraged!
+		}
+
+		return res.json(data)
+	}*/
 
 	var leftCount = 0;
 	var rightCount = 0;
@@ -141,12 +301,13 @@ router.post('//move', function (req, res) {
 
 
 	//only seek out food if hungry
-	if (foods[0][0] > headPosition[0])
+	if( health < 50)
 	{
-		rightCount += 2;
-	} else 
-	
-	{
+		if (foods[0][0] > headPosition[0])
+		{
+			rightCount += 2;
+		} else 
+		{
 			rightCount += 1;
 		}
 
@@ -174,7 +335,16 @@ router.post('//move', function (req, res) {
 		{
 			upCount += 1;
 		}
-
+	}
+	else
+	{
+		var low = 1;
+		var high = 4;
+		rightCount += (Math.floor(Math.random() * (high - low + 1) + low));
+		leftCount += (Math.floor(Math.random() * (high - low + 1) + low));
+		downCount += (Math.floor(Math.random() * (high - low + 1) + low));
+		upCount += Math.floor(Math.random() * (high - low + 1) + low);
+	}
 
 
 	//avoid deadly positions
