@@ -219,11 +219,12 @@ router.post('//move', function (req, res) {
 		compare: function(a, b) {
 			return weight[b[0]][b[1]] - weight[a[0]][a[1]];
 		}
-	});/*
+	});
 	queue.push([hx, hy]);
 	weight[hx][hy] = 0;
 	var targetX = -1;
 	var targetY = -1;
+	/*
 	while (queue.length > 0)
 	{
 		const cur = queue.pop(); // current node to explore
