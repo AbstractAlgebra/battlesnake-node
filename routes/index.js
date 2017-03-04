@@ -98,7 +98,7 @@ router.post('/move', function (req, res) {
 		prev[i] = new Array(gameHeight);
 		plen[i] = new Array(gameHeight);
 		foodAtArr[i] = new Array(gameHeight);
-		for (int j = 0; j < gameHeight; ++j)
+		for (j = 0; j < gameHeight; ++j)
 		{
 			visited[i][j] = false;
 			weight[i][j] = 9999999999; // arbitrary max weight
