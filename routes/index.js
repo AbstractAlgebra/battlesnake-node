@@ -213,10 +213,7 @@ router.post('//move', function (req, res) {
 		if (yd < 0) yd = -yd;
 		return xd + yd;
 	}
-
-	var targetX = -1;
-	var targetY = -1;
-	/*
+	
 
 	var queue = new TinyQueue({
 		compare: function(a, b) {
@@ -265,7 +262,7 @@ router.post('//move', function (req, res) {
 			}
 		}
 	}
-	*//*
+	//*
 	if (targetX == -1)
 	{
 		// this shouldn't happen???
@@ -292,7 +289,7 @@ router.post('//move', function (req, res) {
 
 		return res.json(data)
 	}
-*/
+
 	var leftCount = 0;
 	var rightCount = 0;
 	var upCount = 0;  
