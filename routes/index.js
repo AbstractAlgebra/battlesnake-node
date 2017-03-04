@@ -23,18 +23,7 @@ router.post('/start', function (req, res) {
 router.post('//move', function (req, res) {
 
 
-
-	 var backupPlan = {
-	 	move: 'left', // one of: ['up','down','left','right']
-	 	taunt: 'Zoom zoom!', // ofptional, but encouraged!
-	 }
-
-
-
-	 return res.json(backupPlan)
-
 	// NOTE: Do something here to generate your move
-	/*
 	var input = req.body;
 	var gameWidth = input.width;
 	var gameHeight = input.height;
@@ -81,8 +70,10 @@ router.post('//move', function (req, res) {
 			}
 		}
 	}
+
+
 	// }
-	/*
+	
 	
 	var hx = headPosition[0];
 	var hy = headPosition[1];
@@ -120,6 +111,15 @@ router.post('//move', function (req, res) {
 			foodAtArr[i][j] = false;
 		}
 	}
+	 var backupPlan = {
+	 	move: 'left', // one of: ['up','down','left','right']
+	 	taunt: 'Zoom zoom!', // ofptional, but encouraged!
+	 }
+
+
+
+	 return res.json(backupPlan)
+
 	/*for (var i = 0; i < dangerousPositions.length; ++i)
 	{
 		visited[dangerousPositions[i][0], dangerousPositions[i][1]] = true;
