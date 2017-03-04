@@ -167,7 +167,7 @@ router.post('//move', function (req, res) {
 			foodAtArr[i][j] = false;
 			snakeWeight[i][j] = 0;
 		}
-	}/*
+	}
 	for (var i = 0; i < dangerousPositions.length; ++i)
 	{
 		const dx = dangerousPositions[i][0];
