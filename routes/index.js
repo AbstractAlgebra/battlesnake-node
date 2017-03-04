@@ -46,6 +46,10 @@ router.post('//move', function (req, res) {
 	//var k = snakes.length;
 	var k = snakes.length;
 
+	var queue = new PriorityQueue({ comparator: function(a, b) { return b - a; }});
+	queue.queue(5);
+	queue.queue(3);
+	queue.queue(2);
 
 	// {
 
@@ -61,13 +65,13 @@ router.post('//move', function (req, res) {
 				position.push(snakes[i].coords[j]);
 			}
 		}
-	else
-	{
-		enemySnakeHeads.push(snakes[i].coords[0]);
-		for(j = 0; j < snakes[i].coords.length; j++)
+		else
 		{
-			dangerousPositions.push(snakes[i].coords[j]);
-		}
+			enemySnakeHeads.push(snakes[i].coords[0]);
+			for(j = 0; j < snakes[i].coords.length; j++)
+			{
+				dangerousPositions.push(snakes[i].coords[j]);
+			}
 		}
 	}
 	// }
