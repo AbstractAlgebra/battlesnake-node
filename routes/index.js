@@ -8,11 +8,14 @@ router.post('/start', function (req, res) {
 
   // Response data
   var data = {
-    color: "#008080",
-    name: "Bowser",
-    head_url: "http://bsnek.herokuapp.com/", // optional, but encouraged!
-    taunt: "Let's do thisss thang!", // optional, but encouraged!
-  }
+    color: '#48C9B0',
+    secondary_color: '#00FF00',
+    head_url: 'http://tinypic.com/r/1gqij7/9',
+    name: 'Metal Gear Snake',
+    taunt: 'Colonel, it's me! I'm fighting myself!',
+    head_type: 'fang',
+    tail_type: 'pixel'
+}
 
   return res.json(data)
 })
