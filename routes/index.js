@@ -191,7 +191,7 @@ router.post('//move', function (req, res) {
 	{
 		foodAtArr[foods[i][0]][foods[i][1]] = true;
 	}
-	/*
+	
 	function foodAt(fx, fy)
 	{
 		return foodAtArr[fx][fy];
@@ -212,7 +212,7 @@ router.post('//move', function (req, res) {
 		if (xd < 0) xd = -xd;
 		if (yd < 0) yd = -yd;
 		return xd + yd;
-	}*/
+	}
 
 	var targetX = -1;
 	var targetY = -1;
