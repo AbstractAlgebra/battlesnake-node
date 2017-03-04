@@ -23,10 +23,13 @@ router.post('/start', function (req, res) {
 router.post('//move', function (req, res) {
 
 
+
 	 var backupPlan = {
-	 	move: left, // one of: ['up','down','left','right']
+	 	move: 'left', // one of: ['up','down','left','right']
 	 	taunt: 'Zoom zoom!', // ofptional, but encouraged!
 	 }
+
+
 
 	 return res.json(backupPlan)
 
