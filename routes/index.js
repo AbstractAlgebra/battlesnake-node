@@ -241,7 +241,7 @@ router.post('//move', function (req, res) {
 			targetX = cx;
 			targetY = cy;
 		}
-		if (foodAt(cx, cy) && (health < 40 || 2 * hp < plen[cx][cy]))
+		if (foodAt(cx, cy) && (health < 40 || 2 * health < plen[cx][cy]))
 		{
 			targetX = -1;
 			targetY = -1;
