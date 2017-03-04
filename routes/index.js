@@ -197,6 +197,7 @@ router.post('//move', function (req, res) {
 			taunt: 'Zoom zoom!' // optional, but encouraged!
 		}
 
+	return res.json(data);
 
 	/*
 
