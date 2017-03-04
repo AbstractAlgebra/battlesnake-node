@@ -8,13 +8,13 @@ router.post('/start', function (req, res) {
 
   // Response data
   var data = {
-    color: '#48C9B0',
-    secondary_color: '#00FF00',
-    head_url: 'http://i65.tinypic.com/1gqij7.jpg',
-    name: 'Metal Gear Snake',
-    taunt: 'Colonel, it's me! I'm fighting myself!',
-    head_type: 'fang',
-    tail_type: 'pixel'
+    "color": "#48C9B0",
+    "secondary_color": "#00FF00",
+    "head_url": "http://i65.tinypic.com/1gqij7.jpg",
+    "name": "Metal Gear Snake",
+    "taunt": "Colonel, it's me! I'm fighting myself!",
+    "head_type": "fang",
+    "tail_type": "pixel"
 }
 
   return res.json(data)
