@@ -247,7 +247,7 @@ router.post('//move', function (req, res) {
 			targetY = -1;
 			break;
 		}
-/*		for (var o = 0; o < 4; ++o)
+		for (var o = 0; o < 4; ++o)
 		{
 			// try all offsets (left, right, ec) and if not visited, move to
 			const px = offsets[o][0] + cx;
@@ -265,7 +265,7 @@ router.post('//move', function (req, res) {
 					queue.push([px, py]);
 				}
 			}
-		}*/
+		}
 	}
 	//*
 	/*
