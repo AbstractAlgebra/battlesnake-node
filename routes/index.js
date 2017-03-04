@@ -112,13 +112,13 @@ router.post('//move', function (req, res) {
 	var dangerousPositions = new Array();
 	var headPosition;
 
-	for(i = 0; i < snakes.length; i++)
+	for(var i = 0; i < snakes.length; i++)
 	{
 		if(snakes[i].id == you)
 		{
 			health = snakes[i].health_points;
 			headPosition = snakes[i].coords[0];
-			for(j = 0; j < snakes[i].coords.length; j++)
+			for(var j = 0; j < snakes[i].coords.length; j++)
 			{
 				dangerousPositions.push(snakes[i].coords[j]);
 				position.push(snakes[i].coords[j]);
@@ -127,7 +127,7 @@ router.post('//move', function (req, res) {
 		else
 		{
 			enemySnakeHeads.push(snakes[i].coords[0]);
-			for(j = 0; j < snakes[i].coords.length; j++)
+			for(var j = 0; j < snakes[i].coords.length; j++)
 			{
 				dangerousPositions.push(snakes[i].coords[j]);
 			}
