@@ -229,7 +229,7 @@ router.post('//move', function (req, res) {
 		const cw = weight[cx][cy];// current weight
 		visited[cx][cy] = true;
 		// @TODO remove when we don't want to just move to nearest food
-		/*if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
+		if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
 		{
 			targetX = cx;
 			targetY = cy;
@@ -240,7 +240,7 @@ router.post('//move', function (req, res) {
 			targetY = -1;
 			break;
 		}
-		for (var o = 0; o < 4; ++o)
+/*		for (var o = 0; o < 4; ++o)
 		{
 			// try all offsets (left, right, ec) and if not visited, move to
 			const px = o[0] + cx;
@@ -258,7 +258,7 @@ router.post('//move', function (req, res) {
 				}
 			}
 		}*/
-	}/*
+	}
 	//*
 	if (targetX == -1)
 	{
