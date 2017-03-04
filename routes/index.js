@@ -221,7 +221,8 @@ router.post('//move', function (req, res) {
 	
 
 	var queue = new TinyQueue([], function(a, b) {
-		return weight[b[0]][b[1]] - weight[a[0]][a[1]];
+		return 1;
+		//return weight[b[0]][b[1]] - weight[a[0]][a[1]];
 	});
 	queue.push([hx, hy]);
 	weight[hx][hy] = 0;
@@ -262,7 +263,7 @@ router.post('//move', function (req, res) {
 					weight[px][py] = pw;
 					prev[px][py] = reverseMove[o];
 					plen[px][py] = plen[cx][cy] + 1;
-				//	queue.push([px, py]);
+					queue.push([px, py]);
 				}
 			}
 		}
