@@ -234,12 +234,12 @@ router.post('//move', function (req, res) {
 			targetX = cx;
 			targetY = cy;
 		}
-		if (foodAt(cx, cy) && (health < 40 || 2 * hp < plen[cx][cy]))
+	/*	if (foodAt(cx, cy) && (health < 40 || 2 * hp < plen[cx][cy]))
 		{
 			targetX = -1;
 			targetY = -1;
 			break;
-		}
+		}*/
 /*		for (var o = 0; o < 4; ++o)
 		{
 			// try all offsets (left, right, ec) and if not visited, move to
