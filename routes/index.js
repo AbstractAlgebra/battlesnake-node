@@ -189,7 +189,7 @@ router.post('//move', function (req, res) {
 
 	for (var i = 0; i < foods.length; ++i)
 	{
-		foodAt[foods[i][0]][foods[i][1]] = true;
+		foodAtArr[foods[i][0]][foods[i][1]] = true;
 	}
 	/*
 	function foodAt(fx, fy)
