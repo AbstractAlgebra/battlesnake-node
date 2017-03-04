@@ -71,15 +71,15 @@ router.post('/move', function (req, res) {
 	}
 	// }
 	
-	const hx = headPosition[0];
-	const hy = headPosition[1];
-	const NONE = -1;
-	const DOWN = 0;
-	const RIGHT = 1;
-	const LEFT = 2;
-	const UP = 3;
-	const offsets = [[0, 1], [1, 0], [-1, 0], [0, -1]];
-	const reverseMove = [3, 2, 1, 0];
+	var hx = headPosition[0];
+	var hy = headPosition[1];
+	var NONE = -1;
+	var DOWN = 0;
+	var RIGHT = 1;
+	var LEFT = 2;
+	var UP = 3;
+	var offsets = [[0, 1], [1, 0], [-1, 0], [0, -1]];
+	var reverseMove = [3, 2, 1, 0];
 	
 	var queue = new PriorityQueue({
 		comparator: function(a, b) {
@@ -127,10 +127,10 @@ router.post('/move', function (req, res) {
 	var targetY = -1;
 	while (queue.length() > 0)
 	{
-		const cur = queue.dequeue(); // current node to explore
-		const cx = cur[0];
-		const cy = cur[1];
-		const cw = weight[cx][cy];// current weight
+		var cur = queue.dequeue(); // current node to explore
+		var cx = cur[0];
+		var cy = cur[1];
+		var cw = weight[cx][cy];// current weight
 		visited[cx][cy] = true;
 		// @TODO remove when we don't want to just move to nearest food
 		if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
@@ -147,11 +147,11 @@ router.post('/move', function (req, res) {
 		for (var o = 0; o < 4; ++o)
 		{
 			// try all offsets (left, right, ec) and if not visited, move to
-			const px = o[0] + cx;
-			const py = o[1] + cy;
+			var px = o[0] + cx;
+			var py = o[1] + cy;
 			if (!visited[px][py] && px >= 0 && py >= 0 && px < gameWidth && py < gameHeight)
 			{
-				const pw = cw + 1; // @TODO: add in a weight heuristic
+				var pw = cw + 1; // @TODO: add in a weight heuristic
 				if (pw < weight[px][py])
 				{
 					// update weight if we can get there cheaper
@@ -180,8 +180,8 @@ router.post('/move', function (req, res) {
 			tx = offsets[prev[tx][ty]][0];
 			ty = offsets[prev[tx][ty]][1];
 		}
-		const move = reverseMove[prev[ptx][pty]];
-		const resp = ['down', 'right', 'left', 'up'];
+		var move = reverseMove[prev[ptx][pty]];
+		var resp = ['down', 'right', 'left', 'up'];
 		var data = {
 			move: resp[move], // one of: ['up','down','left','right']
 			taunt: 'Zoom zoom!', // optional, but encouraged!
