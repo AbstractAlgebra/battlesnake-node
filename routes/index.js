@@ -20,7 +20,7 @@ router.post('/start', function (req, res) {
 
 
 // Handle POST request to '/move'
-router.post('//move', function (req, res) {
+router.post('/move', function (req, res) {
 	// NOTE: Do something here to generate your move
 	
 	var input = req.body;
