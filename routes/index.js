@@ -133,7 +133,7 @@ router.post('//move', function (req, res) {
 			}
 		}
 	}
-	
+	/*
 	const hx = headPosition[0];
 	const hy = headPosition[1];
 	const NONE = -1;
@@ -263,7 +263,7 @@ router.post('//move', function (req, res) {
 			}
 		}
 	}
-	*/
+	*//*
 	if (targetX == -1)
 	{
 		// this shouldn't happen???
@@ -290,7 +290,7 @@ router.post('//move', function (req, res) {
 
 		return res.json(data)
 	}
-
+*/
 	var leftCount = 0;
 	var rightCount = 0;
 	var upCount = 0;  
