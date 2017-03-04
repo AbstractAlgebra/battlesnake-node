@@ -25,10 +25,10 @@ router.post('//move', function (req, res) {
 
 	 var backupPlan = {
 	 	move: left, // one of: ['up','down','left','right']
-	 	taunt: 'Zoom zoom!', // optional, but encouraged!
+	 	taunt: 'Zoom zoom!', // ofptional, but encouraged!
 	 }
 
-	 return res.json(backupPlan);
+	 return res.json(backupPlan)
 
 	// NOTE: Do something here to generate your move
 	/*
