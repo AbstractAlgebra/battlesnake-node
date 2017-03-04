@@ -70,7 +70,7 @@ router.post('//move', function (req, res) {
 		}
 	}
 	// }
-	
+	/*
 	
 	var hx = headPosition[0];
 	var hy = headPosition[1];
