@@ -258,7 +258,7 @@ router.post('//move', function (req, res) {
 				}
 			}
 		}
-	}
+	}/*
 	//*
 	if (targetX == -1)
 	{
@@ -285,7 +285,7 @@ router.post('//move', function (req, res) {
 		}
 
 		return res.json(data)
-	}
+	}*/
 
 	var leftCount = 0;
 	var rightCount = 0;
