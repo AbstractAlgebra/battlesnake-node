@@ -291,9 +291,7 @@ router.post('//move', function (req, res) {
 			ptx = tx;
 			pty = ty;
 			console.log("tx is: " + tx);
-						console.log("ty is: " + ty);
-									console.log("ptx is: " + ptx);
-												console.log("pty is: " + pty);
+			console.log("ty is: " + ty);
 			tx = tx + offsets[prev[ptx][pty]][0];
 			ty = ty + offsets[prev[ptx][pty]][1];
 		}
@@ -303,6 +301,7 @@ router.post('//move', function (req, res) {
 
 
 		const resp = ['down', 'right', 'left', 'up'];
+		console.log("final move: " + resp[move]);
 		var data = {
 			move: resp[move], // one of: ['up','down','left','right']
 			taunt: 'Zoom zoom!', // optional, but encouraged!
