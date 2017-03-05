@@ -268,38 +268,40 @@ router.post('//move', function (req, res) {
 		}
 	}
 	//*
-	/*
+	
 	if (targetX == -1)
 	{
 		// this shouldn't happen???
 	}
 	else
 	{
+
+
 		var tx = targetX;
 		var ty = targetY;
 		var ptx = tx;
 		var pty = ty;
-		while (prev[tx][ty] != NONE)
+		/*while (prev[tx][ty] != NONE)
 		{
 			ptx = tx;
 			pty = ty;
 			tx = offsets[prev[tx][ty]][0];
 			ty = offsets[prev[tx][ty]][1];
 		}
-		
+		*/
 		console.log("This is the value of prev: " + prev[ptx][pty]);
-		const move = reverseMove[prev[ptx][pty]];
+//		const move = reverseMove[prev[ptx][pty]];
 
 
 		const resp = ['down', 'right', 'left', 'up'];
 		var data = {
-			move: resp[move], // one of: ['up','down','left','right']
+			move: 'left', // one of: ['up','down','left','right']
 			taunt: 'Zoom zoom!', // optional, but encouraged!
 		}
 
 		return res.json(data)
 	}
-	*/
+	
 
 	var leftCount = 0;
 	var rightCount = 0;
