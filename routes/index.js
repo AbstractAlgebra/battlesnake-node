@@ -208,7 +208,9 @@ router.post('//move', function (req, res) {
 		{
 			foodDist += mdist(heurx, heury, foods[i][0], foods[i][1]);
 		}
-		return 1 + snakeWeight[heurx][heury] + foodDist * 0.1 / (0.1 + foods.length);
+		//return 1 + snakeWeight[heurx][heury] + foodDist * 0.1 / (0.1 + foods.length);
+	
+		return 1;
 	}
 	function mdist(ax, ay, bx, by)
 	{
