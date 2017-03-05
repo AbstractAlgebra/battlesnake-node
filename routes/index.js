@@ -286,7 +286,11 @@ router.post('//move', function (req, res) {
 			tx = offsets[prev[tx][ty]][0];
 			ty = offsets[prev[tx][ty]][1];
 		}
+		
+		(console.log(prev[ptx][pty]));
 		const move = reverseMove[prev[ptx][pty]];
+
+
 		const resp = ['down', 'right', 'left', 'up'];
 		var data = {
 			move: resp[move], // one of: ['up','down','left','right']
@@ -459,7 +463,7 @@ router.post('//move', function (req, res) {
 
 	return res.json(data)
 }catch(e){
-	console.log(e);
+	console.log(prev);
 }
 
 
