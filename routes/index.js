@@ -288,8 +288,9 @@ router.post('//move', function (req, res) {
 		{
 			ptx = tx;
 			pty = ty;
-			tx = offsets[prev[tx][ty]][0];
-			ty = offsets[prev[tx][ty]][1];
+			
+			tx = offsets[prev[ptx][pty]][0];
+			ty = offsets[prev[ptx][pty]][1];
 		}
 		
 		console.log("This is the value of prev: " + prev[ptx][pty]);
