@@ -297,7 +297,7 @@ router.post('//move', function (req, res) {
 		}
 		
 		console.log("This is the value of prev: " + prev[ptx][pty]);
-//		const move = reverseMove[prev[ptx][pty]];
+		const move = reverseMove[prev[ptx][pty]];
 
 
 		const resp = ['down', 'right', 'left', 'up'];
