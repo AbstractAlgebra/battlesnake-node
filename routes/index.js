@@ -256,19 +256,19 @@ router.post('//move', function (req, res) {
 			    && !visited[px][py] && snakesAt[px][py] <= plen[cx][cy])
 			{
 				const pw = cw + heurisic(px, py);
-				/*if (pw < weight[px][py])
+				if (pw < weight[px][py])
 				{
 					// update weight if we can get there cheaper
 					weight[px][py] = pw;
 					prev[px][py] = reverseMove[o];
 					plen[px][py] = plen[cx][cy] + 1;
 					queue.push([px, py]);
-				}*/
+				}
 			}
 		}
 	}
 	//*
-	
+	/*
 	if (targetX == -1)
 	{
 		// this shouldn't happen???
@@ -299,6 +299,7 @@ router.post('//move', function (req, res) {
 
 		return res.json(data)
 	}
+	*/
 
 	var leftCount = 0;
 	var rightCount = 0;
