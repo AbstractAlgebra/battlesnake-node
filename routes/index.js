@@ -271,10 +271,12 @@ router.post('//move', function (req, res) {
 	
 	if (targetX == -1)
 	{
+		console.log("case 1");
 		// this shouldn't happen???
 	}
 	else if (prev[tx][ty] != NONE)
 	{
+		console.log("case 2");
 
 
 		var tx = targetX;
@@ -302,7 +304,7 @@ router.post('//move', function (req, res) {
 
 		return res.json(data)
 	}
-	
+	console.log("case 3");
 
 	var leftCount = 0;
 	var rightCount = 0;
