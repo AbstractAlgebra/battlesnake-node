@@ -240,8 +240,8 @@ router.post('//move', function (req, res) {
 		// @TODO remove when we don't want to just move to nearest food
 		if (targetX == -1 || plen[cx][cy] > plen[targetX][targetY])
 		{
-			//targetX = cx;
-			//targetY = cy;
+			targetX = cx;
+			targetY = cy;
 		}
 		if (foodAt(cx, cy) )//&& (health < 40 || 2 * health < plen[cx][cy]))
 		{
