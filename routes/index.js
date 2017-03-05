@@ -243,8 +243,8 @@ router.post('//move', function (req, res) {
 		}
 		if (foodAt(cx, cy) && (health < 40 || 2 * health < plen[cx][cy]))
 		{
-			targetX = -1;
-			targetY = -1;
+			targetX = cx;
+			targetY = cy;
 			break;
 		}
 		for (var o = 0; o < 4; ++o)
