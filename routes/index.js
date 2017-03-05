@@ -274,7 +274,7 @@ router.post('//move', function (req, res) {
 		console.log("case 1");
 		// this shouldn't happen???
 	}
-	else if (prev[tx][ty] != NONE)
+	else if (prev[targetX][targetY] != NONE)
 	{
 		console.log("case 2");
 
