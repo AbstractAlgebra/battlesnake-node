@@ -302,7 +302,7 @@ router.post('//move', function (req, res) {
 
 		const resp = ['down', 'right', 'left', 'up'];
 		var data = {
-			move: 'left', // one of: ['up','down','left','right']
+			move: resp[move], // one of: ['up','down','left','right']
 			taunt: 'Zoom zoom!', // optional, but encouraged!
 		}
 
