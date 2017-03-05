@@ -10,7 +10,7 @@ router.post('//start', function (req, res) {
   var data = {
     "color": "#48C9B0",
     "secondary_color": "#00FF00",
-    "head_url": "http://i65.tinypic.com/1gqij7.jpg",
+    "head_url": "http://i68.tinypic.com/1448v7k.png",
     "name": "Metal Gear Snake",
     "taunt": "Colonel, it's me! I'm fighting myself!",
     "head_type": "fang",
@@ -467,7 +467,7 @@ router.post('//move', function (req, res) {
 
 	return res.json(data)
 }catch(e){
-	console.log(prev);
+	console.log(e);
 }
 
 
