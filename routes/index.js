@@ -284,14 +284,14 @@ router.post('//move', function (req, res) {
 		var ptx = tx;
 		var pty = ty;
 
-		while (prev[tx][ty] != NONE)
+		/*while (prev[tx][ty] != NONE)
 		{
 			ptx = tx;
 			pty = ty;
 			
 			tx = offsets[prev[ptx][pty]][0];
 			ty = offsets[prev[ptx][pty]][1];
-		}
+		}*/
 		
 		console.log("This is the value of prev: " + prev[ptx][pty]);
 //		const move = reverseMove[prev[ptx][pty]];
