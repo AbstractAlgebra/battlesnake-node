@@ -273,7 +273,7 @@ router.post('//move', function (req, res) {
 	{
 		// this shouldn't happen???
 	}
-	else
+	else if (prev[tx][ty] != NONE)
 	{
 
 
@@ -281,6 +281,7 @@ router.post('//move', function (req, res) {
 		var ty = targetY;
 		var ptx = tx;
 		var pty = ty;
+
 		while (prev[tx][ty] != NONE)
 		{
 			ptx = tx;
