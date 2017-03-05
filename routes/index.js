@@ -255,7 +255,7 @@ router.post('//move', function (req, res) {
 			const px = offsets[o][0] + cx;
 			const py = offsets[o][1] + cy;
 			if (px >= 0 && py >= 0 && px < gameWidth && py < gameHeight
-			    && !visited[px][py] && snakesAt[px][py] <= plen[cx][cy])
+			    && !visited[px][py] && snakesAt[px][py] == 0)//<= plen[cx][cy])
 			{
 				const pw = cw + heurisic(px, py);
 				if (pw < weight[px][py])
